@@ -22,24 +22,40 @@ public class FileUploadService {
             return null;
         }
 
-        //nomeArquivo.png
-        //nome
-        //png
-        //nome.Arquivo.jpg
-        String[] nomeArquivoArray = imagem.getOriginalFilename().split("\\.");
+        String[] arrayArquivoArray = imagem.getOriginalFilename().split("\\.");
         String novoNome = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyyHHmmss"));
-        String extensaoArquivo = nomeArquivoArray[nomeArquivoArray.length - 1];
+        String extensaoArquivo = arrayArquivoArray [arrayArquivoArray.length -1];
 
-        String nomeImagem = novoNome + "." + extensaoArquivo;
+        String nomeImg  = novoNome + "." + extensaoArquivo;
 
-        File imagemCriada = new File(diretorioImg + "\\" + nomeImagem);
+        File imagemCriada = new File(diretorioImg + "\\" + nomeImg);
 
         BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(imagemCriada));
 
         stream.write(imagem.getBytes());
         stream.close();
 
-        return nomeImagem;
+        return nomeImg;
+
+
+        //nomeArquivo.png
+        //nome
+        //png
+        //nome.Arquivo.jpg
+//        String[] nomeArquivoArray = imagem.getOriginalFilename().split("\\.");
+//        String novoNome = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyyHHmmss"));
+//        String extensaoArquivo = nomeArquivoArray[nomeArquivoArray.length - 1];
+
+      //  String nomeImagem = novoNome + "." + extensaoArquivo;
+
+//        File imagemCriada = new File(diretorioImg + "\\" + nomeImagem);
+
+//        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(imagemCriada));
+
+       // stream.write(imagem.getBytes());
+      //  stream.close();
+
+       // return nomeImg;
     }
 }
 

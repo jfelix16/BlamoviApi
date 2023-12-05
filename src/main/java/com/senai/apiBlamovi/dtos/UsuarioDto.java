@@ -12,11 +12,6 @@ public record UsuarioDto(
 
         @NotBlank String senha,
 
-        //String endereco,
-
-        //String cep,
-
-       // TipoModel tipo_usuario,
 
         MultipartFile imagem
 ) {
