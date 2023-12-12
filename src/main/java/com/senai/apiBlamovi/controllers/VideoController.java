@@ -25,6 +25,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 @RestController
+
+@CrossOrigin(origins = "*")
+
 @RequestMapping(value = "/video", produces = {"application/json"})
 public class VideoController {
 
